@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from flask_restful import Resource, Api
 from flask_mysqldb import MySQL
 
@@ -24,7 +24,15 @@ def home():
         return render_template('index.html', data=data)
 
     if request.method == 'POST':
-        return 'POST'
+        values = request.form
+        sql = ''' INSERT INTO pessoas(`nome`,`rg`,`cpf`,`data_nascimento`,`data_admissao`,`funcao`) VALUES(%s,%s,%s,%s,%s,%s) '''
+        args = (values['name'],values['rg'],values['cpf'],values['born'],values['admission'],values['function'])
+        cursor = mysql.connection.cursor()
+        result = cursor.execute(sql, args)
+        mysql.connection.commit()
+        data = cursor.fetchall()
+        cursor.close()
+        return redirect('/')
 
     if request.method == 'DELETE':
         return 'DELETE'

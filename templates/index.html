@@ -21,20 +21,20 @@
        {% endfor %}
       </table>
       <div class="" style="margin-top: 50px">
-        <form>
-          <label for="fname">Nome</label><br>
-          <input type="text" id="inp_name" name="fname"><br>
-          <label for="lname">RG:</label><br>
-          <input type="text" id="inp_rg" name="lname"><br>
-          <label for="lname">CPF:</label><br>
-          <input type="text" id="inp_cpf" name="lname"><br>
-          <label for="lname">Data de Nascimento:</label><br>
-          <input type="text" id="inp_born" name="lname"><br>
-          <label for="lname">Data de Admissão:</label><br>
-          <input type="text" id="inp_adm" name="lname"><br>
-          <label for="lname">Função:</label><br>
-          <input type="text" id="inp_func" name="lname"><br>
-          <button type="button" name="button"> Cadastrar </button>
+        <form action="/" method="POST">
+          <label for="name">Nome</label><br>
+          <input type="text" id="inp_name" name="name"><br>
+          <label for="rg">RG:</label><br>
+          <input type="text" id="inp_rg" name="rg"><br>
+          <label for="cpf">CPF:</label><br>
+          <input type="text" id="inp_cpf" name="cpf"><br>
+          <label for="born">Data de Nascimento:</label><br>
+          <input type="text" id="inp_born" name="born"><br>
+          <label for="admission">Data de Admissão:</label><br>
+          <input type="text" id="inp_adm" name="admission"><br>
+          <label for="function">Função:</label><br>
+          <input type="text" id="inp_func" name="function"><br>
+          <button type="submit" name="button"> Cadastrar </button>
         </form>
       </div>
     </div>
