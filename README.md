@@ -20,4 +20,4 @@ Implementado no ambiend de sandbox com Vue 3.
 ☁️ [SandBox Link](https://codesandbox.io/s/visie-brunofaefaion-fullstack-frontend-00wv4) ☁️
 
 ### Contribuidores
-Projetos realizados integralmento por Bruno Faé Faion.
+Projetos realizados integralmente por Bruno Faé Faion.
