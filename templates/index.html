@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>Test</title>
+    <link rel="stylesheet" href="/static/style.css">
   </head>
   <body>
-    <div class="">
+    <div>
       <table>
        <tr>
          <th>Nome</th>
@@ -20,7 +21,7 @@
          </tr>
        {% endfor %}
       </table>
-      <div class="" style="margin-top: 50px">
+      <div style="margin-top: 50px">
         <form action="/" method="POST">
           <label for="name">Nome</label><br>
           <input type="text" id="inp_name" name="name"><br>
@@ -41,56 +42,4 @@
   </body>
 </html>
 
-<style>
-html, body {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 500px;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-
-input {
-  margin-bottom: 20px;;
-}
-
-@media only screen and (max-width: 768px) {
-  html, body {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-  }
-}
-</style>
-
-<script>
-  async function deleteItem(id){
-    try {
-      await fetch('/', {
-        method: 'DELETE',
-        body: JSON.stringify({id: `${id}`}),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-      location.reload()
-    } catch (e) {
-      console.error('Error on call...', e)
-    }
-  }
-</script>
+<script src="/static/scripts.js" charset="utf-8"></script>
