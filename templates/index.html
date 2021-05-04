@@ -5,23 +5,42 @@
     <title>Test</title>
   </head>
   <body>
-    <table>
-     <tr>
-       <th>Nome</th>
-       <th>Data de admissão</th>
-       <th>Ações</th>
-     </tr>
-     <tr>
-       <td>Jill</td>
-       <td>Smith</td>
-       <td><button class="editbtn">Excluir</button></td>
-     </tr>
-     <tr>
-       <td>Eve</td>
-       <td>Jackson</td>
-       <td><button class="editbtn">Excluir</button></td>
-     </tr>
-    </table>
+    <div class="">
+      <table>
+       <tr>
+         <th>Nome</th>
+         <th>Data de admissão</th>
+         <th>Ações</th>
+       </tr>
+       <tr>
+         <td>Jill</td>
+         <td>Smith</td>
+         <td><button class="editbtn">Excluir</button></td>
+       </tr>
+       <tr>
+         <td>Eve</td>
+         <td>Jackson</td>
+         <td><button class="editbtn">Excluir</button></td>
+       </tr>
+      </table>
+      <div class="" style="margin-top: 50px">
+        <form>
+          <label for="fname">Nome</label><br>
+          <input type="text" id="fname" name="fname"><br>
+          <label for="lname">RG:</label><br>
+          <input type="text" id="lname" name="lname"><br>
+          <label for="lname">CPF:</label><br>
+          <input type="text" id="lname" name="lname"><br>
+          <label for="lname">Data de Nascimento:</label><br>
+          <input type="text" id="lname" name="lname"><br>
+          <label for="lname">Data de Admissão:</label><br>
+          <input type="text" id="lname" name="lname"><br>
+          <label for="lname">Função:</label><br>
+          <input type="text" id="lname" name="lname"><br>
+          <button type="button" name="button"> Cadastrar </button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
 
@@ -47,6 +66,10 @@ td, th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+input {
+  margin-bottom: 20px;;
 }
 
 @media only screen and (max-width: 768px) {
