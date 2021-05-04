@@ -22,11 +22,16 @@ class Pessoas(Resource):
         # cursor.close()
         return {"msg": "hello world!"}
 
-api.add_resource(Pessoas, '/api/pessoas')
+api.add_resource(Pessoas, '/a')
 
 @app.route('/')
 def home():
-   return render_template('index.html')
+    cursor = mysql.connection.cursor()
+    result = cursor.execute(''' SELECT * FROM pessoas ''')
+    mysql.connection.commit()
+    data = cursor.fetchall()
+    cursor.close()
+    return render_template('index.html', data=data)
 
 if __name__ == '__main__':
     app.run(debug=True)

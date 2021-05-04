@@ -6,22 +6,24 @@
   </head>
   <body>
     <div class="">
+      <!-- {% for row in data %}
+            <div class="">
+              {{row[1]}}
+            </div>
+        {% endfor %} -->
       <table>
        <tr>
          <th>Nome</th>
          <th>Data de admissão</th>
          <th>Ações</th>
        </tr>
-       <tr>
-         <td>Jill</td>
-         <td>Smith</td>
-         <td><button class="editbtn">Excluir</button></td>
-       </tr>
-       <tr>
-         <td>Eve</td>
-         <td>Jackson</td>
-         <td><button class="editbtn">Excluir</button></td>
-       </tr>
+       {% for row in data %}
+         <tr>
+           <td>{{ row[1].split(' ')[0] }}</td>
+           <td>{{ row[5].strftime('%d/%m/%Y') }}</td>
+           <td><button class="editbtn">Excluir</button></td>
+         </tr>
+       {% endfor %}
       </table>
       <div class="" style="margin-top: 50px">
         <form>
