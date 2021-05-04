@@ -13,17 +13,6 @@ app.config['MYSQL_DB'] = 'brunofaion'
 
 mysql = MySQL(app)
 
-class Pessoas(Resource):
-    def get(self):
-        # cursor = mysql.connection.cursor()
-        # result = cursor.execute(''' SELECT * FROM pessoas ''')
-        # mysql.connection.commit()
-        # data = cursor.fetchall()
-        # cursor.close()
-        return {"msg": "hello world!"}
-
-api.add_resource(Pessoas, '/a')
-
 @app.route('/')
 def home():
     cursor = mysql.connection.cursor()
