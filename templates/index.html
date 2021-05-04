@@ -5,6 +5,55 @@
     <title>Test</title>
   </head>
   <body>
-    blablabla
+    <table>
+     <tr>
+       <th>Nome</th>
+       <th>Data de admissão</th>
+       <th>Ações</th>
+     </tr>
+     <tr>
+       <td>Jill</td>
+       <td>Smith</td>
+       <td><button class="editbtn">Excluir</button></td>
+     </tr>
+     <tr>
+       <td>Eve</td>
+       <td>Jackson</td>
+       <td><button class="editbtn">Excluir</button></td>
+     </tr>
+    </table>
   </body>
 </html>
+
+<style>
+html, body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 500px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+@media only screen and (max-width: 768px) {
+  html, body {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+</style>
