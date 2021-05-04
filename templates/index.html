@@ -16,7 +16,7 @@
          <tr>
            <td>{{ row[1].split(' ')[0] }}</td>
            <td>{{ row[5].strftime('%d/%m/%Y') }}</td>
-           <td><button class="editbtn">Excluir</button></td>
+           <td><button onClick="deleteItem({{ row[0] }})">Excluir</button></td>
          </tr>
        {% endfor %}
       </table>
@@ -77,3 +77,20 @@ input {
   }
 }
 </style>
+
+<script>
+  async function deleteItem(id){
+    try {
+      await fetch('/', {
+        method: 'DELETE',
+        body: JSON.stringify({id: `${id}`}),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      location.reload()
+    } catch (e) {
+      console.error('Error on call...', e)
+    }
+  }
+</script>
