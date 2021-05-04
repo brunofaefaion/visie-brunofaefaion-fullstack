@@ -14,6 +14,12 @@ app.config['MYSQL_DB'] = 'brunofaion'
 
 mysql = MySQL(app)
 
+def database(sql, args):
+    cursor = mysql.connection.cursor()
+    result = cursor.execute(sql, args)
+    mysql.connection.commit()
+    cursor.close()
+
 @app.route('/', methods = ['GET', 'POST', 'DELETE'])
 def home():
     if request.method == 'GET':
@@ -30,10 +36,7 @@ def home():
         born = datetime.strptime(values['born'], '%d/%m/%Y')
         sql = ''' INSERT INTO pessoas(`nome`,`rg`,`cpf`,`data_nascimento`,`data_admissao`,`funcao`) VALUES(%s,%s,%s,%s,%s,%s) '''
         args = (values['name'],values['rg'],values['cpf'],born,admission,values['function'])
-        cursor = mysql.connection.cursor()
-        result = cursor.execute(sql, args)
-        mysql.connection.commit()
-        cursor.close()
+        database(sql, args)
         return redirect('/')
 
     if request.method == 'DELETE':
