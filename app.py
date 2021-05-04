@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_restful import Resource, Api
 from flask_mysqldb import MySQL
 
@@ -13,14 +13,21 @@ app.config['MYSQL_DB'] = 'brunofaion'
 
 mysql = MySQL(app)
 
-@app.route('/')
+@app.route('/', methods = ['GET', 'POST', 'DELETE'])
 def home():
-    cursor = mysql.connection.cursor()
-    result = cursor.execute(''' SELECT * FROM pessoas ''')
-    mysql.connection.commit()
-    data = cursor.fetchall()
-    cursor.close()
-    return render_template('index.html', data=data)
+    if request.method == 'GET':
+        cursor = mysql.connection.cursor()
+        result = cursor.execute(''' SELECT * FROM pessoas ''')
+        mysql.connection.commit()
+        data = cursor.fetchall()
+        cursor.close()
+        return render_template('index.html', data=data)
+
+    if request.method == 'POST':
+        return 'POST'
+
+    if request.method == 'DELETE':
+        return 'DELETE'
 
 if __name__ == '__main__':
     app.run(debug=True)
